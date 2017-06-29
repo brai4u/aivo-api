@@ -24,7 +24,7 @@ to get an APP_ID and APP_SECRET go to https://developers.facebook.com/ and creat
 
 ``php -S localhost:8000 -t public``
 
-Enter to http://localhost:8000 and de response should be
+Enter to http://localhost:8000 and the response should be
 
 ``
 {
