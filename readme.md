@@ -40,6 +40,7 @@ Example:
 http://localhost:8000/profile/facebook/111
 
 Response
+STATUS 200
 ```json
 {
 id: "111",
@@ -48,5 +49,15 @@ lastName: "Lilly",
 shortName: "Evelyn",
 profileImage: "https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/1460000_10102572123840001_4781256006491491724_n.jpg?oh=9feeebdc91fb05c99291c794e8fa56d4&oe=59C9B46F",
 coverImage: "https://scontent.xx.fbcdn.net/v/t1.0-0/p180x540/16142312_10103435908618381_1896812636425046304_n.jpg?oh=a0dbc6a7ded2aa3eec0f68c5b2773f7d&oe=59E1BF00"
+}
+```
+
+if the facebook id not found
+
+STATUS 404
+
+```json
+{
+error: "reason"
 }
 ```
