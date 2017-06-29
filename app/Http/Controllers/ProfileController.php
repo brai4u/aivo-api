@@ -20,11 +20,11 @@ class ProfileController extends Controller
 			}				
 				$userData = $response->getGraphUser();
 				return response()->json(['id' => $userData->getId(),
-																	'firstName' => $userData->getFirstName(),
-																	'lastName' => $userData->getLastName(),
-																	'shortName' => $userData['short_name'],
-																	'profileImage' => $userData['picture']['url'],
-																	'coverImage' => $userData['cover']['source']
-																]);
+																'firstName' => $userData->getFirstName(),
+																'lastName' => $userData->getLastName(),
+																'shortName' => $userData['short_name'],
+																'profileImage' => $userData['picture']['url'],
+																'coverImage' => $userData['cover']['source']
+															]);
 		}
 }
