@@ -3,6 +3,7 @@
 ## Requirements
   * git (https://git-scm.com/downloads)
   * composer (https://getcomposer.org/)
+  * PHP >= 5.6.4
 
 ## how to install
 
