@@ -11,8 +11,12 @@ class ProfileController extends Controller
 		 * @return void
 		 */
 		
-		public function getProfile(SammyK\LaravelFacebookSdk\LaravelFacebookSdk $fb, $id){
+		public function index(){
+			return response()->json(['status' => 'online']);
+		}
 
+		public function getProfile(SammyK\LaravelFacebookSdk\LaravelFacebookSdk $fb, $id=null){
+			
 			try {
 				$response = $fb->get('/' . $id . '?fields=' . env('FACEBOOK_SCOPE'), env('FACEBOOK_TOKEN'));
 			} catch(\Facebook\Exceptions\FacebookSDKException $e) {

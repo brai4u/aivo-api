@@ -10,5 +10,5 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-
-$app->get('/profile/facebook/{id}', 'ProfileController@getProfile');
+$app->get('/', 'ProfileController@index');
+$app->get('/profile/facebook[/{id}]', 'ProfileController@getProfile');
