@@ -20,7 +20,7 @@ class ProfileController extends Controller
 		try {
 			$response = $fb->get('/' . $id . '?fields=' . env('FACEBOOK_SCOPE'), env('FACEBOOK_TOKEN'));
 		} catch(\Facebook\Exceptions\FacebookSDKException $e) {
-				return response()->json(['error' => $e->getMessage()], 404);
+			return response()->json(['error' => $e->getMessage()], 404);
 		}				
 		
 		$userData = $response->getGraphUser();
