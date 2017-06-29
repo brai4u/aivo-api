@@ -1,21 +1,52 @@
-# Lumen PHP Framework
+# aivo test
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+## Requirements
+  * git (https://git-scm.com/downloads)
+  * composer (https://getcomposer.org/)
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## how to install
 
-## Official Documentation
+``git clone https://github.com/brai4u/aivo-api.git``
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+``cd aivo-api``
 
-## Security Vulnerabilities
+``composer install``
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Copy ``.env.example`` and rename to ``.env`` here edit the following lines
 
-## License
+```
+FACEBOOK_APP_ID=id
+FACEBOOK_APP_SECRET=secretid
+FACEBOOK_TOKEN=apptoken
+```
 
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+to get an APP_ID and APP_SECRET go to https://developers.facebook.com/ and create a new app and click on 'dashboard' section then go to https://developers.facebook.com/tools/accesstoken/ and copy the token from you new app
+
+``php -S localhost:8000 -t public``
+
+Enter to http://localhost:8000 and de response should be
+
+``
+{
+status: "online"
+}
+``
+
+## how to use
+
+GET /profile/facebook/123456
+
+Example:
+http://localhost:8000/profile/facebook/111
+
+Response
+```json
+{
+id: "111",
+firstName: "Evelyn",
+lastName: "Lilly",
+shortName: "Evelyn",
+profileImage: "https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/1460000_10102572123840001_4781256006491491724_n.jpg?oh=9feeebdc91fb05c99291c794e8fa56d4&oe=59C9B46F",
+coverImage: "https://scontent.xx.fbcdn.net/v/t1.0-0/p180x540/16142312_10103435908618381_1896812636425046304_n.jpg?oh=a0dbc6a7ded2aa3eec0f68c5b2773f7d&oe=59E1BF00"
+}
+```
